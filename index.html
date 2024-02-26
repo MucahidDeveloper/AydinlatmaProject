@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerekli Aydınlatma Hesaplama</title>
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="tablolar.js" type="text/javascript" defer></script>
+    <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header flex">
+      <img src="img/harran.png" alt="Harran Logo" class="hero-img" />
+      <div class="giris flex">
+        <h1 class="headLine">İç Aydınlatma Yöntemler</h1>
+        <p class="seconderyLine">
+          PROJEYİ HAZIRLAYAN: Mücahid ELHADDAD - 180507140
+        </p>
+        <p class="seconderyLine">PROJE DANIŞMANI: Dr.Öğr.Üyesi KERİM KARADAĞ</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="verimTablo" id="verimTablo section">
+        <form class="verimForm" id="verimForm">
+          <div class="verimSections flex">
+            <div class="section">
+              <div class="input">
+                <label for="odaUzun">Oda Uzunluğu:</label>
+                <input type="number" step="any" id="odaUzun" name="odaUzun" />
+              </div>
+              <div class="input">
+                <label for="odaGenis">Oda Genişliği:</label>
+                <input type="number" step="any" id="odaGenis" name="odaGenis" />
+              </div>
+              <div class="input">
+                <label for="odaYuksek">Oda Yüksekliği:</label>
+                <input
+                  type="number"
+                  step="any"
+                  id="odaYuksek"
+                  name="odaYuksek"
+                />
+              </div>
+              <div class="input">
+                <label for="masaYuksek">Masa Yüksekliği:</label>
+                <input
+                  type="number"
+                  step="any"
+                  id="masaYuksek"
+                  name="masaYuksek"
+                />
+              </div>
+              <div class="input">
+                <label for="kurFactorNum">Kürlenme Faktoru:</label>
+                <input
+                  type="number"
+                  step="any"
+                  id="kurFactorNum"
+                  name="kurFactorNum"
+                />
+              </div>
+            </div>
+            <div class="boyaRenkleri section">
+              <div class="input">
+                <label for="tavanRenk">Tavan Renği:</label>
+                <select id="tavanRenk" name="tavanRenk" class="select">
+                  <option value="0.8">Beyaz/Açık (80%)</option>
+                  <option value="0.5">Orta Açık (50%)</option>
+                  <option value="0.3">Gri (30%)</option>
+                  <option value="0.1">Koy (10%)</option>
+                  <option value="" selected>Bilgi YOK</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="duvarRenk">Duvar Renği:</label>
+                <select id="duvarRenk" name="duvarRenk" class="select">
+                  <option value="0.8">Beyaz/Açık (80%)</option>
+                  <option value="0.5">Orta Açık (50%)</option>
+                  <option value="0.3">Gri (30%)</option>
+                  <option value="0.1">Koy (10%)</option>
+                  <option value="" selected>Bilgi YOK</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="zeminRenk">Zemin Renği:</label>
+                <select id="zeminRenk" name="zeminRenk" class="select">
+                  <option value="0.8">Beyaz/Açık (80%)</option>
+                  <option value="0.5">Orta Açık (50%)</option>
+                  <option value="0.3">Gri (30%)</option>
+                  <option value="0.1">Koy (10%)</option>
+                  <option value="" selected>Bilgi YOK</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="Yer">Yer Tipi:</label>
+                <select id="Yer" name="Yer" class="select">
+                  <option value="250" selected>Mutfak</option>
+                  <option value="100">Oda</option>
+                  <option value="200">Salon</option>
+                  <option value="50">Tuvalet</option>
+                  <option value="300">Laboratuar</option>
+                  <option value="250">Çalışma Odası</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="boyarenki">Boya Renği:</label>
+                <select id="boyarenki" name="boyarenki" class="select">
+                  <option value="A">Tavan ve Duvar Beyaz</option>
+                  <option value="B">Tavan Beyaz ve Duvar Koy</option>
+                  <option value="" selected>Bilgi YOK</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="section secimler">
+              <div class="input">
+                <label for="tip">Aydınlatma Tipi:</label>
+                <select id="tip" name="tip" class="select">
+                  <option value="direkt" selected>Direkt</option>
+                  <option value="yaridirek">Yarı Direkt</option>
+                  <option value="karma">Karma</option>
+                  <option value="yariEndirekt">Yarı Endirekt</option>
+                  <option value="Endirekt">Endirekt</option>
+                  <option value="Serbest">Serbest Dağıtım</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="kirlenmeDurumu">kirlenme Durumu:</label>
+                <select
+                  id="kirlenmeDurumu"
+                  name="kirlenmeDurumu"
+                  class="select"
+                >
+                  <option value="azKir">Az Kirlenme</option>
+                  <option value="normalKir" selected>Normal Kirlenme</option>
+                  <option value="cokKir">Çok Kirlenme</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="temizlamaSure">Temizlama Süresi:</label>
+                <select id="temizlamaSure" name="temizlamaSure" class="select">
+                  <option value="1">Bir Yıl</option>
+                  <option value="2" selected>İki Yıl</option>
+                  <option value="3">Üç Yıl</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="lamba">Lambalar Tipi:</label>
+                <select id="lamba" name="lamba" class="select">
+                  <option value="Akkor">Akkor</option>
+                  <option value="Flurs" selected>Flüoresan</option>
+                  <option value="Halide">Metal Halide</option>
+                  <option value="CivaBuh">Civa Buharlı</option>
+                  <option value="SodBuh">Sodyum Buharlı</option>
+                  <option value="HalojenKap">Halojen Kapsöl</option>
+                  <option value="HalojenAmp">Halojen Ampul</option>
+                  <option value="cabHalojenAmp">Çabuk Halojen Ampul</option>
+                  <option value="komFlurs">Kompact Flüoresant</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="akis">Lambanın Adı:</label>
+                <select id="akis" name="akis" class="select"></select>
+              </div>
+            </div>
+          </div>
+          <input type="submit" class="ekleBtn btn" id="ekleBtn" value="Ekle" />
+        </form>
+      </div>
+      <div class="cikisTablo" id="cikisTablo">
+        <div class="sonuclar flex" id="sonuclar">
+          <table id="sonucCetveli">
+            <caption>
+              Aydınlatma Cetveli
+            </caption>
+
+            <thead>
+              <tr>
+                <th>Yer</th>
+                <th>Uzun</th>
+                <th>Gen</th>
+                <th>Alan</th>
+                <th>Yük</th>
+                <th>İndeks</th>
+                <th>Verim.F</th>
+                <th>E</th>
+                <th>A.Tipi</th>
+                <th>L.Tipi</th>
+                <th>1L.Akısı</th>
+                <th>L.Sayısı</th>
+                <th>Yöntem</th>
+                <th>Sil</th>
+              </tr>
+            </thead>
+
+            <tbody class=""></tbody>
+          </table>
+        </div>
+        <button class="yazdirBtn btn" id="yazdir">Yazdır</button>
+      </div>
+    </main>
+    <footer class="footer">
+      <hr />
+      <p class="coded">
+        Bu site
+        <a class="myName" href="https://github.com/MucahidDeveloper">Mücahid</a>
+        tarafından Aydınlatma dersin projesi olarak programlandı
+      </p>
+    </footer>
+  </body>
+</html>
