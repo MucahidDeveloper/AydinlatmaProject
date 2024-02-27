@@ -3,6 +3,8 @@ The number of bulbs required to ideally illuminate the place is calculated using
 
 Used Skills:
 - Pure JavaScript
-- Css
+- CSS
 - HTML
 - JSON
+
+![لقطة شاشة 2024-02-26 225911](https://github.com/MucahidDeveloper/AydinlatmaProject/assets/127043807/83d96f39-3631-4ea6-935d-130027de574f)
